@@ -1,0 +1,184 @@
+{
+	"info": {
+		"_postman_id": "edff7db9-a6c6-444f-9b61-733cd6cd1702",
+		"name": "Keycloak copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://iam.nslhub.com:8180/auth/realms/BRF-SignUp/protocol/openid-connect/token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "ptest",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "venu.sravanam@nslhub.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "venu",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://iam.nslhub.com/auth/realms/ptest/protocol/openid-connect/token",
+					"protocol": "https",
+					"host": [
+						"iam",
+						"nslhub",
+						"com"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"ptest",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				},
+				"description": "Get Keycloak resource server Token"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8092/core/api/users/roles",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJQZDRuNG85cklhZlBLVVV2NGZDS2ozWXNfazJ4VGpxeUhhcWt3dTRTdHNNIn0.eyJqdGkiOiIxY2QyZDM2My02YTFlLTQ2YjItOWZjMS1mNGVhYjlkNzQ4OWQiLCJleHAiOjE1NzY4MjYzNjgsIm5iZiI6MCwiaWF0IjoxNTc2ODIzMzY4LCJpc3MiOiJodHRwOi8vaWFtLm5zbGh1Yi5jb206ODE4MC9hdXRoL3JlYWxtcy9CUkYtU2lnblVwIiwiYXVkIjoiYWNjb3VudCIsInN1YiI6IjJjYjhjMTE0LTVkNDctNGFiYS05YmQxLWJlZmFhOTAwZGEyYiIsInR5cCI6IkJlYXJlciIsImF6cCI6IkJSRi1mcm9udGVuZCIsImF1dGhfdGltZSI6MCwic2Vzc2lvbl9zdGF0ZSI6IjAyYjk0MmFmLWI0YWMtNGYwOC05NGJjLTkzMTZmN2QxZmU3MyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiYnJmLXNjb3BlIHByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsIm5hbWUiOiJyYWplc2ggcHVubmEiLCJsYXN0X25hbWUiOiJwdW5uYSIsInByZWZlcnJlZF91c2VybmFtZSI6InJhamVzaCIsImdpdmVuX25hbWUiOiJyYWplc2giLCJmYW1pbHlfbmFtZSI6InB1bm5hIiwiZmlyc3RfbmFtZSI6InJhamVzaCIsImVtYWlsIjoicmFqZXNoLnB1bm5hQG5zbGh1Yi5jb20ifQ.c0Hj-dpTfsNwwqqAC3SJvBTaurHrOp2xD9us9mFHFtVdAgpgdsA9l8uQbVVDDndOC71boNjYo64-LXuuYiJkZAp-7hNkWzz9SUrT_TZsyUO9nuY5oC6_0lSWQ4aLt9s64R3D65n1HfuEa3sKSZ4roBZy8nIgpTDLTfF7px2TBF0wd8ENieAz5x-ZNcFvzAR8_Sr6h_c97qlzWdEl1C8VC9NaZB20ny9PN9H34PgqxRU9apLlGuGzcDZ7mZNg9Z-v7cO2rBZPKXRFmrGtdHIvGBg5UPuX-fWyQI8JxYJPgCFuTKi347D9oZB0GBKIi8r9PcWDBXn6TvrkdVRtuxkQQA",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8092/core/api/users/roles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"core",
+						"api",
+						"users",
+						"roles"
+					]
+				},
+				"description": "Get roles with Bearer access token for current user "
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8091/nsl-app/users/getroles/rajesh.punna@nslhub.com/rajesh",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8091/nsl-app/users/getroles/rajesh.punna@nslhub.com/rajesh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8091",
+					"path": [
+						"nsl-app",
+						"users",
+						"getroles",
+						"rajesh.punna@nslhub.com",
+						"rajesh"
+					]
+				},
+				"description": "Get Roles from Oauth"
+			},
+			"response": []
+		},
+		{
+			"name": "http://iam.nslhub.com:8180/auth/realms/MultiTenant-SignUp/protocol/openid-connect/token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "MultiTenant-SignUp",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "pragnya",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "pragnya",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://iam.nslhub.com:8180/auth/realms/MultiTenant-SignUp/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"iam",
+						"nslhub",
+						"com"
+					],
+					"port": "8180",
+					"path": [
+						"auth",
+						"realms",
+						"MultiTenant-SignUp",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": []
+}
